@@ -117,11 +117,11 @@ export default function Home() {
           <h2 className="text-5xl font-bold mb-8 font-serif">About Me</h2>
           <div className="font-serif text-lg max-w-none w-full text-[clamp(16px,2.5vw,24px)] text-gray-300 leading-relaxed">
             <p className="whitespace-pre-line">
-              Hi, I&apos;m Aditya Singh, a passionate Computer Science undergrad at VIT Vellore, specializing in Information Security. I&apos;m someone who genuinely enjoys building things - whether it&apos;s a scalable SaaS platform, a horror game with friends, or a CLI tool just because it&apos;s fun.
+              Hi, I&apos;m Aditya Singh, a passionate Computer Science undergrad at VIT Vellore, specializing in Information Security. I&apos;m someone who genuinely enjoys building things whether it&apos;s a scalable SaaS platform, a horror game with friends, or a CLI tool just because it&apos;s fun.
               
-              Over the years, I&apos;ve had the opportunity to wear many hats: developer, team lead, maintainer, and event coordinator. I&apos;ve worked with technologies ranging from Godot and Golang to React Native and Redis, and I love diving deep into both creative and technical challenges. I thrive in collaborative environments - whether that&apos;s coordinating a festival, maintaining open-source projects, or mentoring juniors through ACM-VIT.
+              Over the years, I&apos;ve had the opportunity to wear many hats: developer, team lead, maintainer, and event coordinator. I&apos;ve worked with technologies ranging from Godot and Golang to React Native and Redis, and I love diving deep into both creative and technical challenges. I thrive in collaborative environments whether that&apos;s coordinating a festival, maintaining open-source projects, or mentoring juniors through ACM-VIT.
               
-              What drives me is curiosity and the joy of solving real-world problems, especially in cybersecurity, distributed systems, and full-stack development. I also believe in giving back - through hosting events, guiding juniors, or just being there for my team.
+              What drives me is curiosity and the joy of solving real-world problems, especially in cybersecurity, distributed systems, and full-stack development. I also believe in giving back through hosting events, guiding juniors, or just being there for my team.
               
               I like basketball too :)
             </p>
