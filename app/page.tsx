@@ -2,25 +2,13 @@
 
 import Image from "next/image"
 import { useEffect, useState, useRef } from "react"
-import { Github, Linkedin, ChevronDown, X } from "lucide-react"
-import dynamic from "next/dynamic"
-
-// Dynamically import PDFViewer with SSR disabled
-const PDFViewer = dynamic(() => import("./components/pdf-viewer"), {
-  ssr: false,
-  loading: () => (
-    <div className="h-full flex items-center justify-center">
-      <div className="text-gray-600">Loading PDF viewer...</div>
-    </div>
-  ),
-})
+import { Github, Linkedin, ChevronDown } from "lucide-react"
 
 const photos = ["/11.jpeg", "/22.jpeg", "/33.jpeg"]
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [hovering, setHovering] = useState(false)
-  const [showPDF, setShowPDF] = useState(false)
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
@@ -76,12 +64,14 @@ export default function Home() {
 
             {/* Button */}
             <div className="flex gap-4">
-              <button
-                onClick={() => setShowPDF(true)}
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-3 border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-300 font-medium"
               >
                 View Resume
-              </button>
+              </a>
             </div>
           </div>
 
@@ -127,11 +117,11 @@ export default function Home() {
           <h2 className="text-5xl font-bold mb-8 font-serif">About Me</h2>
           <div className="font-serif text-lg max-w-none w-full text-[clamp(16px,2.5vw,24px)] text-gray-300 leading-relaxed">
             <p className="whitespace-pre-line">
-              Hi, I&apos;m Aditya Singh, a passionate Computer Science undergrad at VIT Vellore, specializing in Information Security. I&apos;m someone who genuinely enjoys building things — whether it&apos;s a scalable SaaS platform, a horror game with friends, or a CLI tool just because it&apos;s fun.
+              Hi, I&apos;m Aditya Singh, a passionate Computer Science undergrad at VIT Vellore, specializing in Information Security. I&apos;m someone who genuinely enjoys building things - whether it&apos;s a scalable SaaS platform, a horror game with friends, or a CLI tool just because it&apos;s fun.
               
-              Over the years, I&apos;ve had the opportunity to wear many hats: developer, team lead, maintainer, and event coordinator. I&apos;ve worked with technologies ranging from Godot and Golang to React Native and Redis, and I love diving deep into both creative and technical challenges. I thrive in collaborative environments — whether that&apos;s coordinating a festival, maintaining open-source projects, or mentoring juniors through ACM-VIT.
+              Over the years, I&apos;ve had the opportunity to wear many hats: developer, team lead, maintainer, and event coordinator. I&apos;ve worked with technologies ranging from Godot and Golang to React Native and Redis, and I love diving deep into both creative and technical challenges. I thrive in collaborative environments - whether that&apos;s coordinating a festival, maintaining open-source projects, or mentoring juniors through ACM-VIT.
               
-              What drives me is curiosity and the joy of solving real-world problems, especially in cybersecurity, distributed systems, and full-stack development. I also believe in giving back — through hosting events, guiding juniors, or just being there for my team.
+              What drives me is curiosity and the joy of solving real-world problems, especially in cybersecurity, distributed systems, and full-stack development. I also believe in giving back - through hosting events, guiding juniors, or just being there for my team.
               
               I like basketball too :)
             </p>
@@ -156,21 +146,6 @@ export default function Home() {
 
         </div>
       </footer>
-
-      {/* PDF Modal */}
-      {showPDF && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
-          <div className="relative w-full max-w-4xl h-full max-h-[90vh] bg-white rounded-lg overflow-hidden">
-            <button
-              onClick={() => setShowPDF(false)}
-              className="absolute top-4 right-4 z-10 bg-red-500 text-white p-2 rounded-full hover:bg-red-600 transition-colors duration-300"
-            >
-              <X size={20} />
-            </button>
-            <PDFViewer />
-          </div>
-        </div>
-      )}
     </div>
   )
 }
